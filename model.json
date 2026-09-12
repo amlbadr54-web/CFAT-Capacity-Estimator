@@ -1,0 +1,187 @@
+{
+  "name": "CFAT geometry-based ridge",
+  "version": "1.0",
+  "n_training": 98,
+  "alpha": 1,
+  "intercept": -5.074673221413628,
+  "coefficients": [
+    0.5870340167156031,
+    0.452188727445464,
+    -0.40938924507176794,
+    -2.3294425839061508,
+    0.4409055512497013,
+    0.4282458126048222
+  ],
+  "feature_order": [
+    "ln(Aa/mm2)",
+    "ln(Ac/mm2)",
+    "ln(L/D)",
+    "ln(1+e/D)",
+    "ln(sigma02/MPa)",
+    "ln(fc/MPa)"
+  ],
+  "ranges": {
+    "D": [
+      38.0,
+      180.5
+    ],
+    "t": [
+      2.02,
+      10.24
+    ],
+    "L": [
+      114.0,
+      1920.0
+    ],
+    "e": [
+      0.0,
+      60.0
+    ],
+    "fc": [
+      22.38,
+      106.0
+    ],
+    "sigma02": [
+      70.0,
+      516.94
+    ]
+  },
+  "derived_ranges": {
+    "L/D": [
+      2.9906542056074765,
+      18.2
+    ],
+    "e/D": [
+      0.0,
+      0.4
+    ]
+  },
+  "selection": "3-fold GroupKFold on all 98 experimental records; pooled RMSE in kN; preprocessing fitted inside training folds",
+  "status": "Deployment refit after exploratory model development; selection CV is not independent validation",
+  "trials": [
+    {
+      "alpha": 0.01,
+      "selection_cv_rmse_kN": 257.44807991186053
+    },
+    {
+      "alpha": 0.1,
+      "selection_cv_rmse_kN": 253.70936090122757
+    },
+    {
+      "alpha": 1,
+      "selection_cv_rmse_kN": 227.24361616970972
+    },
+    {
+      "alpha": 10,
+      "selection_cv_rmse_kN": 290.10649466389043
+    },
+    {
+      "alpha": 100,
+      "selection_cv_rmse_kN": 535.5497891162511
+    },
+    {
+      "alpha": 1000,
+      "selection_cv_rmse_kN": 646.2230617216655
+    }
+  ],
+  "training_row_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266
+  ]
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying CFAT capacity prediction paper."
+title: "CFAT Capacity Estimator: Geometry-based Ridge GUI"
+type: software
+authors:
+  - family-names: Badr
+    given-names: Aml
+repository-code: "https://github.com/mkamel24/ALUM"
+license: MIT
+version: "1.0"

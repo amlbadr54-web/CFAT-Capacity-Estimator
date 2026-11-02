@@ -1,20 +1,6 @@
 # Circular CFAT Capacity Estimator
 
 Research-only desktop interface for the frozen cube-equivalent ridge formulation reported in the revised Structures manuscript.
-
-## What to upload to GitHub
-
-Replace the repository files with the contents of this folder:
-
-- `app.py`
-- `model.json`
-- `reference_cases.json`
-- `requirements.txt`
-- `START_WINDOWS.bat`
-- `README.md`
-
-Do not upload the manuscript, external-validation records, or reviewer-response files to the public repository unless the authors explicitly choose to make those materials public.
-
 ## Run on Windows
 
 1. Install Python 3.10 or later, including tkinter.

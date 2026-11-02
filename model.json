@@ -1,187 +1,41 @@
 {
-  "name": "CFAT geometry-based ridge",
-  "version": "1.0",
-  "n_training": 98,
-  "alpha": 1,
-  "intercept": -5.074673221413628,
-  "coefficients": [
-    0.5870340167156031,
-    0.452188727445464,
-    -0.40938924507176794,
-    -2.3294425839061508,
-    0.4409055512497013,
-    0.4282458126048222
-  ],
-  "feature_order": [
-    "ln(Aa/mm2)",
-    "ln(Ac/mm2)",
-    "ln(L/D)",
-    "ln(1+e/D)",
-    "ln(sigma02/MPa)",
-    "ln(fc/MPa)"
-  ],
-  "ranges": {
-    "D": [
-      38.0,
-      180.5
-    ],
-    "t": [
-      2.02,
-      10.24
-    ],
-    "L": [
-      114.0,
-      1920.0
-    ],
-    "e": [
-      0.0,
-      60.0
-    ],
-    "fc": [
-      22.38,
-      106.0
-    ],
-    "sigma02": [
-      70.0,
-      516.94
-    ]
+  "model_id": "PAPER1_CubeRidge_Final_2026-11-01_v1",
+  "status": "frozen research model",
+  "target": "ultimate capacity Pu in kN",
+  "input_convention": {
+    "fc_cube_equivalent_mpa": "Cube-equivalent concrete strength. If a cylinder strength is used, the optional modelling approximation is fcu_eq = fc_cyl / 0.80; this is not a universal conversion."
   },
-  "derived_ranges": {
-    "L/D": [
-      2.9906542056074765,
-      18.2
-    ],
-    "e/D": [
-      0.0,
-      0.4
-    ]
+  "equation": {
+    "intercept": -5.299281280257629,
+    "ln_Aa": 0.6129980773666446,
+    "ln_Ac": 0.4526440373689534,
+    "ln_L_over_D": -0.4025564327795345,
+    "ln_1_plus_e_over_D": -2.3423717044216645,
+    "ln_sigma02": 0.4831672667891598,
+    "ln_fcu_eq": 0.3657767840063311
   },
-  "selection": "3-fold GroupKFold on all 98 experimental records; pooled RMSE in kN; preprocessing fitted inside training folds",
-  "status": "Deployment refit after exploratory model development; selection CV is not independent validation",
-  "trials": [
-    {
-      "alpha": 0.01,
-      "selection_cv_rmse_kN": 257.44807991186053
-    },
-    {
-      "alpha": 0.1,
-      "selection_cv_rmse_kN": 253.70936090122757
-    },
-    {
-      "alpha": 1,
-      "selection_cv_rmse_kN": 227.24361616970972
-    },
-    {
-      "alpha": 10,
-      "selection_cv_rmse_kN": 290.10649466389043
-    },
-    {
-      "alpha": 100,
-      "selection_cv_rmse_kN": 535.5497891162511
-    },
-    {
-      "alpha": 1000,
-      "selection_cv_rmse_kN": 646.2230617216655
-    }
-  ],
-  "training_row_ids": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    30,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    37,
-    38,
-    39,
-    40,
-    41,
-    42,
-    43,
-    44,
-    45,
-    46,
-    47,
-    48,
-    49,
-    194,
-    195,
-    196,
-    197,
-    198,
-    199,
-    200,
-    201,
-    202,
-    203,
-    204,
-    205,
-    230,
-    231,
-    232,
-    233,
-    234,
-    235,
-    236,
-    237,
-    238,
-    239,
-    240,
-    241,
-    242,
-    243,
-    244,
-    245,
-    246,
-    247,
-    248,
-    249,
-    250,
-    251,
-    252,
-    253,
-    254,
-    255,
-    256,
-    257,
-    258,
-    259,
-    260,
-    261,
-    262,
-    263,
-    264,
-    265,
-    266
+  "training": {
+    "records": 98,
+    "source_groups": 8,
+    "regularization_alpha": 0.01,
+    "features": ["ln(Aa)", "ln(Ac)", "ln(L/D)", "ln(1+e/D)", "ln(sigma0.2)", "ln(fcu_eq)"],
+    "metrics": {"R2": 0.924, "RMSE_kN": 173.12, "MAE_kN": 133.38}
+  },
+  "marginal_development_ranges": {
+    "D_mm": [38.0, 180.5],
+    "t_mm": [2.02, 10.24],
+    "L_mm": [114.0, 1920.0],
+    "e_mm": [0.0, 60.0],
+    "fcu_eq_MPa": [22.38, 132.5],
+    "sigma02_MPa": [70.0, 516.94],
+    "D_over_t": [9.69, 59.33],
+    "L_over_D": [2.99, 18.20],
+    "e_over_D": [0.0, 0.40]
+  },
+  "limitations": [
+    "Research prototype only; not a structural-design or safety-verification tool.",
+    "Passing marginal range checks does not establish multivariate support or safe interpolation.",
+    "The model does not provide a resistance lower bound, a calibrated safety factor, or guaranteed error for an individual estimate.",
+    "External-source evaluation showed systematic overprediction; do not use this result as a design resistance."
   ]
 }

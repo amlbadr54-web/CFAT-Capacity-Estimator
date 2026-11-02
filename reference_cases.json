@@ -1,35 +1,14 @@
-[
-  {
-    "inputs": {
-      "D": 38.0,
-      "t": 3.89,
-      "L": 114.0,
-      "e": 0.0,
-      "fc": 44.8,
-      "sigma02": 242.4
-    },
-    "expected_kN": 154.38301612525535
-  },
-  {
-    "inputs": {
-      "D": 150.0,
-      "t": 3.2,
-      "L": 450.0,
-      "e": 0.0,
-      "fc": 48.8,
-      "sigma02": 105.0
-    },
-    "expected_kN": 952.2480437255131
-  },
-  {
-    "inputs": {
-      "D": 160.04,
-      "t": 10.05,
-      "L": 1920.0,
-      "e": 60.0,
-      "fc": 42.9,
-      "sigma02": 252.13
-    },
-    "expected_kN": 693.576462385514
-  }
-]
+{
+  "notice": "Demonstrative in-domain input only. It is not an independent validation specimen and must not be used for design.",
+  "cases": [
+    {
+      "name": "Demonstrative axial input",
+      "D_mm": 100.0,
+      "t_mm": 2.5,
+      "L_mm": 500.0,
+      "e_mm": 0.0,
+      "fcu_eq_MPa": 45.0,
+      "sigma02_MPa": 250.0
+    }
+  ]
+}

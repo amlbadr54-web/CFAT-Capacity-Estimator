@@ -1,4 +1,15 @@
 @echo off
+setlocal
 cd /d "%~dp0"
-py app.py
-if errorlevel 1 pause
+where py >nul 2>&1
+if %errorlevel%==0 (
+    py -3 app.py
+) else (
+    python app.py
+)
+if errorlevel 1 (
+    echo.
+    echo The GUI did not start. Check that Python and tkinter are installed.
+    pause
+)
+endlocal
